@@ -5,115 +5,102 @@
 }
 
 body {
-    background: rgb(8, 163, 117);
+    background: rgb(185, 211, 203);
 }
 
 .container {
-    /* display: grid; */
+    /* mobile first */
     display: grid;
-    background: rgb(134, 135, 143);
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: minmax(3.9em, auto) minmax(30em, auto) repeat(3, minmax(19em, auto)) minmax(27em, auto) minmax(12em, auto);
+    grid-template-rows: minmax(3.9em, auto) minmax(30em, auto) repeat(3, minmax(19em, auto)) minmax(27em, auto) minmax(19em, auto);
 }
 
 .container div {
-    background: rgb(15, 197, 61);
-    font-size: 2em;
+    border: 1px solid rgb(247, 137, 137);
+    font-size: 2.3em;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.container :nth-child(1) {
-    background: #e24a2f;
-    grid-column: 1 / -1;
-    grid-row: span 1;
+.container .logo {
+    /* grid-row: 1; */
+    background: #fad7a0;
 }
 
-.container :nth-child(2) {
+.container .navigation {
     display: none;
+    background: #ec7063;
 }
 
-.container :nth-child(3) {
-    background: rgb(42, 13, 204);
+.container .banner {
+    /* grid-row: 2; */
+    background: #f8c471;
+}
+
+.container .logo,
+.banner,
+.serv1,
+.serv2,
+.serv3,
+.content,
+.footer {
     grid-column: 1/ -1;
-    grid-row: 2;
+    background: #fad7a0;
 }
 
-.container :nth-child(4) {
-    background: rgb(27, 252, 57);
-    grid-column: 1 / -1;
-    grid-row: 3;
+.container .content {
+    background: #f8f9f9;
 }
 
-.container :nth-child(5) {
-    background: rgb(236, 16, 53);
-    grid-column: 1 / -1;
-    grid-row: 4;
+.container .footer {
+    background: #ec7063;
 }
 
-.container :nth-child(6) {
-    grid-column: 1 / -1;
-    grid-row: 5;
-}
 
-.container :nth-child(7) {
-    grid-column: 1 / -1;
-    border: none;
-    background: rgb(211, 176, 176);
-}
+/* tablets */
 
-.container :nth-child(8) {
-    grid-column: 1 / -1;
-}
-
-@media screen and (min-width:48em) {
-    body {
-        background: red;
-    }
+@media screen and (min-width:42em) {
     .container {
-        grid-template-rows: minmax(50px, auto) minmax(33em, auto) repeat(3, minmax(25em, auto)) minmax(33em, auto) minmax(32em, auto);
+        margin: .6em auto;
+        width: 99.3%;
+        grid-template-rows: minmax(5em, auto) minmax(33em, auto) repeat(3, minmax(25em, auto)) minmax(33em, auto) minmax(26em, auto);
+        gap: .8em 0;
     }
-    .container :nth-child(4) {
+    .container .serv1,
+    .serv3 {
         grid-column: span 8;
     }
-    .container :nth-child(5) {
+    .container .serv2 {
         grid-column: 5 / -1;
     }
-    .container :nth-child(6) {
-        grid-column: span 8;
-    }
 }
 
-@media screen and (min-width:62em) {
-    body {
-        background: #000;
-    }
+
+/* desktop */
+
+@media screen and (min-width:64em) {
     .container {
-        margin: 0 auto;
-        width: 98%;
-        grid-template-rows: minmax(3.9em, auto) minmax(33em, auto) repeat(3, minmax(26em, auto)) minmax(20em, auto) minmax(8em, auto);
-        grid-gap: 0;
+        margin: 1em auto;
+        width: 97.5%;
+        grid-template-rows: minmax(4.5em, auto) minmax(33em, auto) minmax(26em, auto) minmax(40em, auto) minmax(18em, auto);
+        gap: 1.2em 1em;
     }
-    .container :nth-child(1) {
+    .container .logo {
         grid-column: 1 / 6;
     }
-    .container :nth-child(2) {
-        display: block;
-        grid-row: 1;
+    .container .navigation {
+        display: inline-flex;
+        float: center;
         grid-column: 6/ -1;
     }
-    .container :nth-child(4) {
-        grid-column: 5 / -1;
-        grid-row: 3;
+    .container .serv1 {
+        grid-column: span 4;
     }
-    .container :nth-child(5) {
-        grid-column: 1 / -1;
-        grid-row: 4;
+    .container .serv2 {
+        grid-column: span 4;
     }
-    .container :nth-child(6) {
-        grid-column: 1 / -1;
-        grid-row: 5;
+    .container .serv3 {
+        grid-column: span 4;
     }
-    .container :nth-child(7) {}
 }
